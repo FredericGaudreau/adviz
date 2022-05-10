@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-
+    <link rel="shortcut icon" href="#" />
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <title>Réponses</title>
   </head>
   <body>
     <h1>Réponses</h1>
     <div id="chart"></div>
-    <button onclick="reinitialiserResultats()">
-      Réinitialiser les résultats
-    </button>
+    <div id="reinitialiserResultats">
+        <button onclick="reinitialiserResultats()">
+          Réinitialiser les résultats et retourner aux questions
+        </button>
+    </div>
     <script>
       let q1 = localStorage.getItem("q1");
       let q2 = localStorage.getItem("q2");
@@ -24,6 +26,10 @@
 
       function reinitialiserResultats() {
         localStorage.removeItem("q1");
+        localStorage.removeItem("q2");
+        localStorage.removeItem("q3");
+        localStorage.removeItem("q4");
+        localStorage.removeItem("q5");
         localStorage.clear();
         location.href = "questions.html";
       }

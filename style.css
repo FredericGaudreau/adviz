@@ -5,26 +5,53 @@ h1 {
   text-align: center;
 }
 #q {
-  margin: 2%;
-  padding: 10px;
+  width: 29%;
+  margin: 1%;
+  padding: 1%;
   background-color: lightgray;
   border: 1px solid gray;
   border-radius: 10px;
 }
+#container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2%;
+  padding: 2%;
+}
 #chart {
   margin: 2%;
-  padding: 10px;
+  padding: 2%;
   background-color: lightgray;
   border: 1px solid gray;
   border-radius: 10px;
 }
 button {
+  font-weight: bold;
   align-items: center;
   margin: 10px;
   padding: 10px;
+  border-radius: 10px;
+  border: 1px solid gray;
 }
 input {
+  font-weight: bold;
   align-items: center;
   margin: 10px;
   padding: 10px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+#transmettreReponses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#reinitialiserResultats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input:checked + label {
+  font-weight: bold;
 }
