@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <title>Réponses</title>
+  </head>
+  <body>
+    <h1>Réponses</h1>
+    <div id="chart"></div>
+    <button onclick="reinitialiserResultats()">
+      Réinitialiser les résultats
+    </button>
+    <script>
+      let q1 = localStorage.getItem("q1");
+      let q2 = localStorage.getItem("q2");
+      let q3 = localStorage.getItem("q3");
+      let q4 = localStorage.getItem("q4");
+      let q5 = localStorage.getItem("q5");
+
+      function reinitialiserResultats() {
+        localStorage.removeItem("q1");
+        localStorage.clear();
+        location.href = "questions.html";
+      }
+      // à faire
+      // tweaker les options pour que les réponses soient plus faciles à lire
+      // optimiser le code
+      const chart = new ApexCharts(document.querySelector("#chart"), {
+        chart: {
+          type: "bar",
+          height: 350,
+          width: "95%",
+        },
+        series: [
+          {
+            name: "Réponses",
+            data: [q1, q2, q3, q4, q5],
+          },
+        ],
+        xaxis: {
+          categories: ["Question 1", "Question 2", "Question 3", "Question 4", "Question 5"],
+        },
+        yaxis: {
+          title: {
+            text: "Réponses",
+          },
+        },
+        tooltip: {
+          enabled: true,
+        },
+      });
+      chart.render();
+    </script>
+  </body>
+</html>
