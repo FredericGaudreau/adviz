@@ -46,6 +46,8 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
+  padding: auto;
 }
 #reinitialiserResultats {
   display: flex;
@@ -54,4 +56,9 @@ input {
 }
 input:checked + label {
   font-weight: bold;
+}
+#message {
+    display: none;
+    margin: auto;
+    padding: auto;
 }

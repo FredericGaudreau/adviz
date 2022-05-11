@@ -110,47 +110,45 @@
         <div id="transmettreReponses">
           <input
             type="button"
-            value="Soumettre et visualiser les résultats"
+            value="Soumettre les résultats"
             onclick="transmettreResultats()"
           />
+        </div>
+        <div id="message">
+          <strong>
+            Veuillez sélectionner une réponse à toutes les questions
+          </strong>
         </div>
       </div>
     </form>
     <script>
       function transmettreResultats() {
-        // sélection des réponses
-        // optimiser le code
-        let q1 = document.querySelector(
-          "input[name='question1']:checked"
-        ).value;
-        let q2 = document.querySelector(
-          "input[name='question2']:checked"
-        ).value;
-        let q3 = document.querySelector(
-          "input[name='question3']:checked"
-        ).value;
-        let q4 = document.querySelector(
-          "input[name='question4']:checked"
-        ).value;
-        let q5 = document.querySelector(
-          "input[name='question5']:checked"
-        ).value;
+        let q1 = document.querySelector("input[name='question1']:checked");
+        let q2 = document.querySelector("input[name='question2']:checked");
+        let q3 = document.querySelector("input[name='question3']:checked");
+        let q4 = document.querySelector("input[name='question4']:checked");
+        let q5 = document.querySelector("input[name='question5']:checked");
+        const message = document.getElementById("message");
+
         // validation de sélection d'une réponse à toutes les questions
-        if (q1 || q2 || q3 || q4 || q5 == null) {
-          location.href = "questions.html";
-          const reponsesManquantes = document.getElementById("container");
-          const para = document.createElement("p");
-          para.textContent =
-            "Veuillez sélectionner une réponse à toutes les questions";
-          reponsesManquantes.appendChild(para);
-        }
+        if (q1 == null || q2 == null || q3 == null || q4 == null || q5 == null) {
+          message.style.display = "block";
+        } 
+
+        // sélection des réponses
+        q1 = q1.value;
+        q2 = q2.value;
+        q3 = q3.value;
+        q4 = q4.value;
+        q5 = q5.value;
+
         // sauvegarde des réponses dans LocalStorage
         localStorage.setItem("q1", q1);
         localStorage.setItem("q2", q2);
         localStorage.setItem("q3", q3);
         localStorage.setItem("q4", q4);
         localStorage.setItem("q5", q5);
-        location.href = "reponses.html";
+        location.href = "reponses.html"; // redirection vers la page de résultats
       }
     </script>
   </body>
