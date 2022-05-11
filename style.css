@@ -1,5 +1,6 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: whitesmoke;
 }
 h1 {
   text-align: center;
@@ -58,7 +59,24 @@ input:checked + label {
   font-weight: bold;
 }
 #message {
-    display: none;
-    margin: auto;
-    padding: auto;
+  display: none;
+  margin: auto;
+  padding: auto;
+}
+#header img {
+  width: auto;
+  height: 60px;
+  margin: 1%;
+  padding: 1%;
+}
+#adresse {
+    color: grey;
+    margin: 1%;
+    padding: 1%;
+}
+#adresse img{
+    width: auto;
+    height: 40px;
+    /* margin: 1%;
+    padding: 1%; */
 }
