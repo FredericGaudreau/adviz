@@ -32,7 +32,7 @@
       </button>
     </div>
     <script>
-      // Récupération des réponses
+      // Récupération des réponses et de la date
       let r1 = localStorage.getItem("r1");
       let r2 = localStorage.getItem("r2");
       let r3 = localStorage.getItem("r3");
@@ -44,7 +44,7 @@
       document.getElementById("date").innerHTML =
         "Le test a été effectué le : " + date;
 
-      // Effacer les données dans le localStorage pour recommencer le test
+      // Effacer les données dans le localStorage et redirection vers les questions
       function reinitialiserResultats() {
         localStorage.removeItem("r1");
         localStorage.removeItem("r2");
@@ -99,6 +99,7 @@
         tooltip: {
           enabled: true,
           followCursor: true,
+          theme: "dark",
         },
       });
       chart.render();

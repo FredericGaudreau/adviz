@@ -125,7 +125,7 @@
           <input
             type="button"
             value="Soumettre les résultats"
-            onclick="transmettreResultats()"
+            onclick="transmettreReponses()"
           />
         </div>
         <div id="message">
@@ -136,15 +136,15 @@
       </div>
     </form>
     <script>
-      function transmettreResultats() {
+      function transmettreReponses() {
         let q1 = document.querySelector("input[name='question1']:checked");
         let q2 = document.querySelector("input[name='question2']:checked");
         let q3 = document.querySelector("input[name='question3']:checked");
         let q4 = document.querySelector("input[name='question4']:checked");
         let q5 = document.querySelector("input[name='question5']:checked");
-        const message = document.getElementById("message");
 
         // validation de sélection d'une réponse à toutes les questions avec un message d'erreur si des réponses sont manquantes
+        let message = document.getElementById("message");
         if (
           q1 == null ||
           q2 == null ||
@@ -169,11 +169,9 @@
         localStorage.setItem("r4", r4);
         localStorage.setItem("r5", r5);
 
-        // create a new `Date` object
-        var dateTest = new Date();
-
-        // get the date and time
-        var dateTest = dateTest.toLocaleString();
+        // sauvegarder la date du test
+        let dateDuTest = new Date();
+        let dateTest = dateDuTest.toLocaleString();
         localStorage.setItem("dateTest", dateTest);
 
         location.href = "reponses.html"; // redirection vers la page de résultats

@@ -72,16 +72,41 @@ input:checked + label {
   margin: auto;
   padding: auto;
 }
+#header {
+  margin-left: 20px;
+}
 #header img {
+  display: flex;
   width: auto;
   height: 60px;
   margin: 4px;
   padding: 4px;
 }
+#menu ul {
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: grey;
+  list-style-type: none;
+  margin: 4px;
+  padding: 4px;
+}
+#menu ul li {
+  /* margin: 1%; */
+  padding: 8px;
+}
+#menu ul li a {
+  color: grey;
+  text-decoration: none;
+}
 #adresse {
   color: grey;
   margin: 4px;
   padding: 4px;
+}
+#footer {
+  margin-left: 20px;
 }
 #footer img {
   width: auto;
