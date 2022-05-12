@@ -168,6 +168,14 @@
         localStorage.setItem("r3", r3);
         localStorage.setItem("r4", r4);
         localStorage.setItem("r5", r5);
+
+        // create a new `Date` object
+        var dateTest = new Date();
+
+        // get the date and time
+        var dateTest = dateTest.toLocaleString();
+        localStorage.setItem("dateTest", dateTest);
+
         location.href = "reponses.html"; // redirection vers la page de résultats
       }
     </script>

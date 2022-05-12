@@ -24,6 +24,7 @@
   <body>
     <div id="header"></div>
     <h1>Réponses</h1>
+    <div id="date"></div>
     <div id="chart"></div>
     <div id="reinitialiserResultats">
       <button onclick="reinitialiserResultats()">
@@ -37,6 +38,11 @@
       let r3 = localStorage.getItem("r3");
       let r4 = localStorage.getItem("r4");
       let r5 = localStorage.getItem("r5");
+      let date = localStorage.getItem("dateTest");
+
+      // Affichage de la date du test
+      document.getElementById("date").innerHTML =
+        "Le test a été effectué le : " + date;
 
       // Effacer les données dans le localStorage pour recommencer le test
       function reinitialiserResultats() {
@@ -45,6 +51,7 @@
         localStorage.removeItem("r3");
         localStorage.removeItem("r4");
         localStorage.removeItem("r5");
+        localStorage.removeItem("date");
         localStorage.clear();
         location.href = "questions.html";
       }

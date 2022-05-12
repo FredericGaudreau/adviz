@@ -65,6 +65,13 @@ input:checked + label {
   margin: auto;
   padding: auto;
 }
+#date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: auto;
+}
 #header img {
   width: auto;
   height: 60px;
