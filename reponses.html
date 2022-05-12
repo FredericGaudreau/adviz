@@ -7,18 +7,23 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="#" />
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script>
-         $(document).ready(function(){
-            $('#header').load("header.html");
-            $('#footer').load("footer.html");
-         });
+      $(document).ready(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
     </script>
     <title>Réponses</title>
   </head>
   <body>
     <div id="header"></div>
-    <!-- <h1>Réponses</h1> -->
+    <h1>Réponses</h1>
     <div id="chart"></div>
     <div id="reinitialiserResultats">
       <button onclick="reinitialiserResultats()">
@@ -26,34 +31,34 @@
       </button>
     </div>
     <script>
-      let q1 = localStorage.getItem("q1");
-      let q2 = localStorage.getItem("q2");
-      let q3 = localStorage.getItem("q3");
-      let q4 = localStorage.getItem("q4");
-      let q5 = localStorage.getItem("q5");
+      // Récupération des réponses
+      let r1 = localStorage.getItem("r1");
+      let r2 = localStorage.getItem("r2");
+      let r3 = localStorage.getItem("r3");
+      let r4 = localStorage.getItem("r4");
+      let r5 = localStorage.getItem("r5");
 
+      // Effacer les données dans le localStorage pour recommencer le test
       function reinitialiserResultats() {
-        localStorage.removeItem("q1");
-        localStorage.removeItem("q2");
-        localStorage.removeItem("q3");
-        localStorage.removeItem("q4");
-        localStorage.removeItem("q5");
+        localStorage.removeItem("r1");
+        localStorage.removeItem("r2");
+        localStorage.removeItem("r3");
+        localStorage.removeItem("r4");
+        localStorage.removeItem("r5");
         localStorage.clear();
         location.href = "questions.html";
       }
-      // à faire
-      // tweaker les options pour que les réponses soient plus faciles à lire
+      // config apexCharts
       const chart = new ApexCharts(document.querySelector("#chart"), {
         chart: {
           type: "bar",
           height: 350,
           width: "98%",
-
         },
         series: [
           {
             name: "Réponse",
-            data: [q1, q2, q3, q4, q5],
+            data: [r1, r2, r3, r4, r5],
           },
         ],
         xaxis: {
@@ -65,18 +70,18 @@
             "Question 5",
           ],
           labels: {
-              style: {
-                    fontSize: "16px",
-                    fontWeight: "bold",
-              }
-          }
+            style: {
+              fontSize: "16px",
+              fontWeight: "bold",
+            },
+          },
         },
         yaxis: {
           title: {
             text: "Réponses",
             style: {
-                fontSize: "16px",
-            }
+              fontSize: "16px",
+            },
           },
           labels: {
             formatter: function (val, index) {

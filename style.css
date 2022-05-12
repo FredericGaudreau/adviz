@@ -4,6 +4,8 @@ body {
 }
 h1 {
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 #q {
   width: 29%;
@@ -18,7 +20,7 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   margin: 2%;
-  padding: 2%;
+  /* padding: 2%; */
 }
 #chart {
   margin: 2%;
@@ -66,17 +68,34 @@ input:checked + label {
 #header img {
   width: auto;
   height: 60px;
-  margin: 1%;
-  padding: 1%;
+  margin: 4px;
+  padding: 4px;
 }
 #adresse {
-    color: grey;
-    margin: 1%;
-    padding: 1%;
+  color: grey;
+  margin: 4px;
+  padding: 4px;
 }
-#adresse img{
-    width: auto;
-    height: 40px;
-    /* margin: 1%;
-    padding: 1%; */
+#footer img {
+  width: auto;
+  height: 40px;
+  margin: 4px;
+  padding: 4px;
+}
+#footer ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: grey;
+  list-style-type: none;
+  margin: 4px;
+  padding: 4px;
+}
+#footer ul li {
+  /* margin: 1%; */
+  padding: 8px;
+}
+#footer ul li a {
+  color: grey;
+  text-decoration: none;
 }
